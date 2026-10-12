@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Midterm</title>
+        <title>NEIU Campus</title>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 		  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -20,36 +20,16 @@
 	
 	<link rel="icon" href="geographer.png">
 	
-	<style>
-  
-  .legend {
-      padding: 6px 8px;
-      line-height: 25px;
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      border-radius: 5px;
-		 }
-
-  /* Optional: adjust the values below to change the appearance of the legend color boxes */
-  .legend i {
-      width: 25px;
-      height: 25px;
-      float: left;
-      margin-right: 8px;
-      opacity: 0.7;
-			}
-  
-</style>
-	
     </head>
 
     <body>
+		<h1>NEIU New Geography Student Campus Map</h1>
         <div id="map"></div>
 		
         <script type="text/javascript">
 
         var map = L.map('map', {
-				center: [41.980181,-87.717741],
+				center: [41.980369,-87.718449],
 				zoom: 17
           });
 
@@ -71,6 +51,7 @@
 		};	
 		
 		L.control.layers(basemaps).addTo(map);
+			
 			var BBH = L.icon({
 				iconUrl: 'bbh.png', // url that links to the icon image file, saved in the same folder as the current page 
 				iconSize:     [38, 38], // size of the icon image in pixels
@@ -109,7 +90,7 @@
 			var pic5 = '<img src="prof_liu.jpg" alt="The savior of sanity as a NEIU Geography student is Professor and Advisor Ting Liu." width="250">';
 			
 			var marker1 = L.marker([41.980478,-87.716775], {icon: BBH, alt: 'An Image of Bernard Brummel Hall.'}).addTo(map);
-			marker1.bindPopup("Bernard Brummel Hall (BBH), Where Geography lives at NEIU." + pic1);
+			marker1.bindPopup("Bernard Brummel Hall (BBH), This IS Geography at NEIU." + pic1);
 			
 			var marker2 = L.marker([41.981632,-87.718282], {icon: village, alt: 'The Village Square'}).addTo(map);
 			marker2.bindPopup("Right through these doors, in the Village Square you can find fancy coffee, snacks, vending machine salads, and the hidden stairs to health services!" + pic2);
@@ -118,10 +99,10 @@
 			marker3.bindPopup("NEIU Library houses a revolving art gallery and employs the kindest and most helpful librarians." + pic3);
 			
 			var marker4 = L.marker([41.981787,-87.718931], {icon: union, alt: 'NEIU Student Union'}).addTo(map);
-			marker4.bindPopup("NEIU Student Union - the great connector. Student services, WZRD, the cafeteria, a place to sit and study, or decompress downstairs." + pic4);
+			marker4.bindPopup("NEIU Student Union - the great connector. Student services, WZRD radio, the cafeteria, a place to sit and study, or decompress downstairs." + pic4);
 			
 			var marker5 = L.marker([41.980419,-87.717550], {icon: BBHLT, alt: 'The basic vicinity of the office of Ting Liu on the third floor of Bernard Brummel Hall.'}).addTo(map);
-			marker5.bindPopup("Professor Ting Liu's office in Bernard Brummel Hall (BBH), Where Geography students go to be rescued at NEIU." + pic5);			
+			marker5.bindPopup("Professor Ting Liu's office in BBH, Where Geography students go to be rescued." + pic5);			
         </script>
    </body>
 </html>
