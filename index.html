@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>NEIU Campus</title>
+        <title>Midterm</title>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 		  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -23,13 +23,14 @@
     </head>
 
     <body>
-		<h1>NEIU New Geography Student Campus Map</h1>
-        <div id="map"></div>
+      <h1>New NEIU Geography Student Campus Map</h1>
+		
+		<div id="map"></div>
 		
         <script type="text/javascript">
 
         var map = L.map('map', {
-				center: [41.980369,-87.718449],
+				center: [41.980181,-87.717741],
 				zoom: 17
           });
 
@@ -41,17 +42,16 @@
         
 
 		var imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-				attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>',
-				maxZoom: 16
+               attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>',
+               maxZoom: 11
 			});
 			
 		var basemaps = {
 		"ESRI World Street Map": canvas,
 		"Light Gray Base": imagery
-		};
+		};	
 		
-		L.control.layers(basemaps).addTo(map);
-			
+		L.control.layers(basemaps, ).addTo(map);
 			var BBH = L.icon({
 				iconUrl: 'bbh.png', // url that links to the icon image file, saved in the same folder as the current page 
 				iconSize:     [38, 38], // size of the icon image in pixels
@@ -59,7 +59,7 @@
 				popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
 			});
 			var BBHTL = L.icon({
-				iconUrl: 'BBHTL.png', // url that links to the icon image file, saved in the same folder as the current page 
+				iconUrl: 'bbhtl.png', // url that links to the icon image file, saved in the same folder as the current page 
 				iconSize:     [38, 38], // size of the icon image in pixels
 				iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
 				popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
@@ -90,7 +90,7 @@
 			var pic5 = '<img src="prof_liu.jpg" alt="The savior of sanity as a NEIU Geography student is Professor and Advisor Ting Liu." width="250">';
 			
 			var marker1 = L.marker([41.980478,-87.716775], {icon: BBH, alt: 'An Image of Bernard Brummel Hall.'}).addTo(map);
-			marker1.bindPopup("Bernard Brummel Hall (BBH), This IS Geography at NEIU." + pic1);
+			marker1.bindPopup("Bernard Brummel Hall (BBH), Where Geography lives at NEIU." + pic1);
 			
 			var marker2 = L.marker([41.981632,-87.718282], {icon: village, alt: 'The Village Square'}).addTo(map);
 			marker2.bindPopup("Right through these doors, in the Village Square you can find fancy coffee, snacks, vending machine salads, and the hidden stairs to health services!" + pic2);
@@ -99,10 +99,10 @@
 			marker3.bindPopup("NEIU Library houses a revolving art gallery and employs the kindest and most helpful librarians." + pic3);
 			
 			var marker4 = L.marker([41.981787,-87.718931], {icon: union, alt: 'NEIU Student Union'}).addTo(map);
-			marker4.bindPopup("NEIU Student Union - the great connector. Student services, WZRD radio, the cafeteria, a place to sit and study, or decompress downstairs." + pic4);
+			marker4.bindPopup("NEIU Student Union - the great connector. Student services, WZRD, the cafeteria, a place to sit and study, or decompress downstairs." + pic4);
 			
-			var marker5 = L.marker([41.980419,-87.717550], {icon: BBHTL, alt: 'The basic vicinity of the office of Ting Liu on the third floor of Bernard Brummel Hall.'}).addTo(map);
-			marker5.bindPopup("Professor Ting Liu's office in BBH, Where Geography students go to be rescued." + pic5);			
+			var marker5 = L.marker([41.980393,-87.717451], {icon: BBHTL, alt: 'The basic vicinity of the office of Ting Liu on the third floor of Bernard Brummel Hall.'}).addTo(map);
+			marker5.bindPopup("Professor Ting Liu's office in Bernard Brummel Hall (BBH), Where Geography students go to be rescued at NEIU." + pic5);			
         </script>
    </body>
 </html>
