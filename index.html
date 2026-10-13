@@ -43,17 +43,17 @@
 
 		var gray = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
 			    attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>',
-			   
+			   	maxNativeZoom: 16,
 			    maxZoom: 18,
-			    
-				});
+			    minZoom: 3
+			});
 			
 		var basemaps = {
 		"ESRI World Street Map": street,
 		"Light Gray Base": gray
 		};	
 		
-		L.control.layers(basemaps, ).addTo(map);
+		L.control.layers(basemaps).addTo(map);
 			var BBH = L.icon({
 				iconUrl: 'Bbh.png', // url that links to the icon image file, saved in the same folder as the current page 
 				iconSize:     [38, 38], // size of the icon image in pixels
@@ -61,7 +61,7 @@
 				popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
 			});
 			var BBHTL = L.icon({
-				iconUrl: 'bbhtl.png', // url that links to the icon image file, saved in the same folder as the current page 
+				iconUrl: 'BBHTL.png', // url that links to the icon image file, saved in the same folder as the current page 
 				iconSize:     [38, 38], // size of the icon image in pixels
 				iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
 				popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
